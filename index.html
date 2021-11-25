@@ -5,19 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link src='styles.css' type="='text/css"/>
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src='index.js' defer='defer'></script>
 </head>
 <body>
     <div id='landing-div' class='hero'>
-        <h1 class="title">FIND ROYALTY FREE PHOTOS AND VIDEOS USING PEXELS API</h1>
+        <h1 class="title">SEARCH  USING  PEXELS  API</h1>
         <input class='search' id='search' type="text" placeholder="Search For...">
-        <h6 class='credit'>Photo by Iryna Kostsenich from Pexels</h6>    
+        <div class='credit'>    
+            <h6 class='photo-credit'>Photo by Iryna Kostsenich from Pexels</h6>
+            <a class='library-credit' href="https://www.pexels.com">Photos provided by Pexels</a>
+        </div>
     </div>
+    
     <div class='search-results'>
-        <h2 id='description'>DISPLAYING IMAGES FOR </h2>
-        <div id='images'>
-
+        <h2 id='description'></h2>
+        <div class='images' id='images'>
+            
         </div>
     </div>
         

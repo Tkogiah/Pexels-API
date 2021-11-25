@@ -16,7 +16,7 @@ body {
     flex-wrap: wrap;
     margin: 2vh 1vw;
     background-color: rgb(13, 0, 14);
-    color: rgba(255, 255, 255, 0.8)
+    color: rgba(0, 247, 255, 0.741)
 }
 
 .hero {
@@ -31,6 +31,19 @@ body {
     background-size: cover;
     background-position: center;
 }
+.title {
+    text-align: center;
+    text-shadow:
+    0 0 7px rgb(167, 81, 238),
+    0 0 10px rgb(167, 81, 238),
+    0 0 21px rgb(167, 81, 238),
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 85px #0fa,
+    0 0 95px #0fa,
+    0 0 100px #0fa;
+}
+
 
 .search {
     animation-duration: 1s;
@@ -47,7 +60,7 @@ body {
     border: 1px solid black;
     border-radius: 5px;
     background-color: black;
-    color: white;
+    color: rgba(0, 247, 255, 0.741);
     font-weight: 700;
     
 }
@@ -86,9 +99,42 @@ body {
     }
   }
 
-  .credit {
+
+.photo-credit {
     font-family: sans-serif;
     position: absolute;
     bottom: 0vh;
     right: 1vw;
-  }
+    font-size: x-small;
+ }
+.library-credit {
+    font-family: sans-serif;
+    position: absolute;
+    bottom: 4vh;
+    left: 1vw;
+    font-size: x-small;
+    text-decoration: none;
+    color: rgba(0, 247, 255, 0.741);
+}
+
+.search-results {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    vertical-align: center;
+    width: 100%;
+    height: auto;
+}
+
+.photo {
+    width: 30vw;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 7vh;
+}
