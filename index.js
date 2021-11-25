@@ -14,9 +14,13 @@ search.addEventListener('keyup', (e) => {
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                let test = JSON.parse(xhttp.responseText);
-                let imageArray = test.photos
+                while(images.firstChild) {
+                    images.removeChild(images.firstChild)
+                }
+                let content = JSON.parse(xhttp.responseText);
+                let imageArray = content.photos
                 description.innerHTML = `DISPLAYING IMAGES FOR ${searchValue}`
+                log(content)
                 for(let i = 0; i < imageArray.length; i++) {
                     let newImage = document.createElement('img')
                     newImage.src = imageArray[i].src.medium
