@@ -9,7 +9,6 @@ const description = document.getElementById('description')
 const load = document.getElementById('load-more')
 
 
-
 search.addEventListener('keyup', (e) => {
     if(!search.value) return;
     pageCount = 1
@@ -24,17 +23,8 @@ search.addEventListener('keyup', (e) => {
                     images.removeChild(images.firstChild)
                 }
                 pageCount = 1;
-                let content = JSON.parse(xhttp.responseText);
-                let imageArray = content.photos
                 description.innerHTML = `DISPLAYING IMAGES FOR ${searchValue}`
-                
-                for(let i = 0; i < imageArray.length; i++) {
-                    let newImage = document.createElement('img')
-                    newImage.src = imageArray[i].src.medium
-                    newImage.classList.add('photo')
-                    newImage.id = i
-                    images.appendChild(newImage) 
-                }
+                renderHTML(xhttp)
             }
             search.value = ''
             load.classList.remove('hidden');   
@@ -51,17 +41,7 @@ load.addEventListener('click', (e) => {
     xhttp.onreadystatechange = function() {  
         
         if (this.readyState == 4 && this.status == 200) {
-
-            let content = JSON.parse(xhttp.responseText);
-            let imageArray = content.photos
-            
-            for(let i = 0; i < imageArray.length; i++) {
-                let newImage = document.createElement('img')
-                newImage.src = imageArray[i].src.medium
-                newImage.classList.add('photo')
-                newImage.id = i
-                images.appendChild(newImage) 
-            }
+            renderHTML(xhttp)
         }
            
     };
@@ -70,3 +50,15 @@ load.addEventListener('click', (e) => {
     xhttp.send();                  
 })
 
+function renderHTML (data) {
+    let content = JSON.parse(data.responseText);
+    let imageArray = content.photos
+    
+    for(let i = 0; i < imageArray.length; i++) {
+        let newImage = document.createElement('img')
+        newImage.src = imageArray[i].src.medium
+        newImage.classList.add('photo')
+        newImage.id = i
+        images.appendChild(newImage) 
+    }
+}
