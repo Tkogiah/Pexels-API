@@ -9,7 +9,7 @@ const description = document.getElementById('description')
 const load = document.getElementById('load-more')
 
 
-let searchURL = `https://api.pexels.com/v1/search/?page=${pageCount}&per_page=15&query=${search.value}`
+
 search.addEventListener('keyup', (e) => {
     if(!search.value) return;
     pageCount = 1
@@ -17,7 +17,6 @@ search.addEventListener('keyup', (e) => {
     searchValue = search.value.toUpperCase()
     if (e.code === "Enter") { 
         let xhttp = new XMLHttpRequest();
-        log(searchURL)
         xhttp.onreadystatechange = function() {
             
             if (this.readyState == 4 && this.status == 200) {
